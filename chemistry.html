@@ -68,6 +68,21 @@
         main {
             padding: 2rem 0;
         }
+
+        .home-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        .home-link:hover {
+            color: #f7b733;
+        }
         
         .hero {
             background: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
@@ -115,6 +130,21 @@
             margin: 1.5rem 0 1rem;
         }
         
+        .home-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        .home-link:hover {
+            color: #f7b733;
+        }
+
         ul, ol {
             margin-left: 2rem;
             margin-bottom: 1rem;
@@ -203,9 +233,38 @@
         }
         
         .quiz-option {
-            margin-bottom: 0.5rem;
+            display: block;
+            padding: 8px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
         }
         
+        .quiz-option:hover {
+            background-color: #e6f7ff;
+        }
+        
+        .quiz-option input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        .quiz-result {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
         .btn {
             display: inline-block;
             background-color: #2874a6;
@@ -414,6 +473,7 @@
 <body>
     <header>
         <div class="container">
+            <a href="login.html" class="home-link">← Back to FutureLearn</a>
             <h1>Grade 11 Chemistry - Ethiopian Curriculum</h1>
             <p>Comprehensive resources for Ethiopian high school students</p>
         </div>
@@ -459,7 +519,7 @@
             
             <div class="topic-card">
                 <h3>Unit 2: Chemical Bonding</h3>
-                <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chemical Bonding" class="chem-img">
+                <img src="https://media.istockphoto.com/id/165907629/vector/molecules.webp?a=1&b=1&s=612x612&w=0&k=20&c=fVdqOqLXHxpLow5j0iF7U7e08HGRWq-hvyVzf3IQFok=" alt="Chemical Bonding" class="chem-img">
                 <ul>
                     <li>Ionic and covalent bonding</li>
                     <li>Lewis structures and VSEPR theory</li>
@@ -545,10 +605,6 @@
                 </ul>
                 <p>VSEPR theory predicts molecular shapes based on electron pair repulsion.</p>
             </div>
-            
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/1xLU3YQ3ZVo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
         </section>
         
         <section id="resources" class="resources">
@@ -559,7 +615,7 @@
                 <div>
                     <h3>Textbook PDF</h3>
                     <p>Download the complete Grade 11 Chemistry textbook approved by the Ethiopian Ministry of Education. Includes all units with examples and exercises.</p>
-                    <a href="#" class="btn">Download Textbook</a>
+                    <a href="textbooks/G11-Chemistry-STB-2023-web.pdf" target="_blank" class="btn">Download Textbook</a>
                 </div>
             </div>
             
@@ -567,84 +623,92 @@
                 <div class="resource-icon">🎬</div>
                 <div>
                     <h3>Video Lessons</h3>
-                    <p>Watch animated explanations of key chemistry concepts from Ethiopian teachers. Covers all units with practical demonstrations.</p>
-                    <a href="#" class="btn">Watch Videos</a>
+                    <p>Watch explanations of key chemistry concepts in this playlist by Crash Course on Youtube!</p>
+                    <a href="https://www.youtube.com/watch?v=uVFCOfSuPTo&list=PL8dPuuaLjXtPHzzYuWy6fYEaX9mQQ8oGr" target = "_blank" class="btn">Watch Videos</a>
                 </div>
-            </div>
-            
-            <div class="resource-card">
-                <div class="resource-icon">🧪</div>
-                <div>
-                    <h3>Virtual Lab Simulations</h3>
-                    <p>Practice chemistry experiments safely with our interactive virtual lab. Includes titration, reaction rate, and gas law experiments.</p>
-                    <a href="#" class="btn">Start Experiment</a>
-                </div>
-            </div>
-            
-            <div class="resource-card">
-                <div class="resource-icon">📝</div>
-                <div>
-                    <h3>Past Exam Papers</h3>
-                    <p>Access previous years' chemistry exam questions with detailed solutions. Perfect for exam preparation.</p>
-                    <a href="#" class="btn">View Exams</a>
-                </div>
-            </div>
-            
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/FSyAehMdpyI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
         
         <section id="quizzes" class="quizzes">
             <h2>Interactive Quizzes</h2>
-            <p>Test your understanding with these interactive exercises. Check your answers and get explanations.</p>
+            <p>Test your understanding with these interactive exercises. Select your answers and check your score.</p>
             
-            <div class="quiz-container">
+            <div class="quiz-container" id="atomicQuiz">
                 <h3>Atomic Structure Quiz</h3>
                 <img src="https://images.unsplash.com/photo-1649261191606-cfc8a0de9d9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Atomic Structure" class="chem-img">
                 <div class="quiz-question">1. What determines the identity of an element?</div>
                 <div class="quiz-options">
-                    <div class="quiz-option">A) Number of neutrons</div>
-                    <div class="quiz-option">B) Number of protons</div>
-                    <div class="quiz-option">C) Number of electrons</div>
-                    <div class="quiz-option">D) Atomic mass</div>
+                    <label class="quiz-option">
+                        <input type="radio" name="q1" value="A"> A) Number of neutrons
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q1" value="B"> B) Number of protons
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q1" value="C"> C) Number of electrons
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q1" value="D"> D) Atomic mass
+                    </label>
                 </div>
                 
                 <div class="quiz-question">2. Isotopes of an element have different numbers of:</div>
                 <div class="quiz-options">
-                    <div class="quiz-option">A) Protons</div>
-                    <div class="quiz-option">B) Electrons</div>
-                    <div class="quiz-option">C) Neutrons</div>
-                    <div class="quiz-option">D) All of the above</div>
+                    <label class="quiz-option">
+                        <input type="radio" name="q2" value="A"> A) Protons
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q2" value="B"> B) Electrons
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q2" value="C"> C) Neutrons
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q2" value="D"> D) All of the above
+                    </label>
                 </div>
                 
-                <a href="#" class="btn">Submit Answers</a>
+                <button class="btn" onclick="checkQuiz('atomicQuiz', ['B', 'C'])">Submit Answers</button>
+                <div id="atomicQuizResult" class="quiz-result"></div>
             </div>
             
-            <div class="quiz-container">
+            <div class="quiz-container" id="bondingQuiz">
                 <h3>Chemical Bonding Quiz</h3>
                 <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Chemical Bonding" class="chem-img">
                 <div class="quiz-question">1. Which type of bond forms between a metal and nonmetal?</div>
                 <div class="quiz-options">
-                    <div class="quiz-option">A) Covalent</div>
-                    <div class="quiz-option">B) Ionic</div>
-                    <div class="quiz-option">C) Metallic</div>
-                    <div class="quiz-option">D) Hydrogen</div>
+                    <label class="quiz-option">
+                        <input type="radio" name="q3" value="A"> A) Covalent
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q3" value="B"> B) Ionic
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q3" value="C"> C) Metallic
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q3" value="D"> D) Hydrogen
+                    </label>
                 </div>
                 
                 <div class="quiz-question">2. According to VSEPR theory, a molecule with 2 bonding pairs and no lone pairs will have what shape?</div>
                 <div class="quiz-options">
-                    <div class="quiz-option">A) Linear</div>
-                    <div class="quiz-option">B) Bent</div>
-                    <div class="quiz-option">C) Trigonal planar</div>
-                    <div class="quiz-option">D) Tetrahedral</div>
+                    <label class="quiz-option">
+                        <input type="radio" name="q4" value="A"> A) Linear
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q4" value="B"> B) Bent
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q4" value="C"> C) Trigonal planar
+                    </label>
+                    <label class="quiz-option">
+                        <input type="radio" name="q4" value="D"> D) Tetrahedral
+                    </label>
                 </div>
                 
-                <a href="#" class="btn">Submit Answers</a>
-            </div>
-            
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/7Djsg4qZffk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <button class="btn" onclick="checkQuiz('bondingQuiz', ['B', 'A'])">Submit Answers</button>
+                <div id="bondingQuizResult" class="quiz-result"></div>
             </div>
         </section>
         
@@ -674,7 +738,7 @@
             <p>For questions or suggestions, please contact us at: chemistryeducation@example.com</p>
             <p>023 Grade 11 Chemistry - Ethiopia.</p>
         </div>
-    </footer>
+    </footer>F
 
     <script>
         // Periodic Table Script
@@ -913,6 +977,53 @@
             const btn = document.querySelector('.voice-btn');
             btn.textContent = `Toggle Voice (Currently ${voiceEnabled ? 'ON' : 'OFF'})`;
             synth.cancel();
+        }
+
+        // Quiz function
+        function checkQuiz(quizId, correctAnswers) {
+            const quizContainer = document.getElementById(quizId);
+            const resultDiv = document.getElementById(quizId + 'Result');
+            const radioGroups = quizContainer.querySelectorAll('input[type="radio"]');
+            let score = 0;
+            let answeredAll = true;
+            
+            // Check each question
+            for (let i = 0; i < correctAnswers.length; i++) {
+                const questionName = 'q' + (i + 1);
+                const selectedOption = quizContainer.querySelector(`input[name="${questionName}"]:checked`);
+                
+                if (!selectedOption) {
+                    answeredAll = false;
+                    break;
+                }
+                
+                if (selectedOption.value === correctAnswers[i]) {
+                    score++;
+                }
+            }
+            
+            if (!answeredAll) {
+                resultDiv.textContent = "Please answer all questions before submitting.";
+                resultDiv.className = "quiz-result incorrect";
+                resultDiv.style.display = "block";
+                //return;
+            }
+            
+            const percentage = Math.round((score / correctAnswers.length) * 100);
+            resultDiv.innerHTML = `
+                <p>You scored ${score} out of ${correctAnswers.length} (${percentage}%)</p>
+                <p>${getFeedbackMessage(percentage)}</p>
+            `;
+            
+            resultDiv.className = percentage >= 50 ? "quiz-result correct" : "quiz-result incorrect";
+            resultDiv.style.display = "block";
+        }
+    
+        function getFeedbackMessage(percentage) {
+            if (percentage >= 90) return "Excellent work! You have a strong understanding of this topic.";
+            if (percentage >= 70) return "Good job! You understand most concepts but could review some areas.";
+            if (percentage >= 50) return "Not bad! Review the material and try again.";
+            return "Keep practicing! Review the notes and try the quiz again.";
         }
 
         // Initialize the periodic table when the page loads
