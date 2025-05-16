@@ -115,6 +115,21 @@
             margin-bottom: 1rem;
         }
 
+        .home-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        .home-link:hover {
+            color: #3498db;
+        }
+
         .equation {
             color: var(--secondary);
             font-size: 1.1em;
@@ -199,11 +214,14 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        
     </style>
 </head>
 <body>
     <header>
         <div class="container">
+            <a href="login.html" class="home-link">← Back to FutureLearn</a>
             <h1>Grade 11 Mathematics</h1>
             <p>Master key concepts with interactive quizzes</p>
         </div>
@@ -255,6 +273,14 @@
                     <p>Test your knowledge across all topics</p>
                     <a href="#quiz" onclick="showTopic('quiz')">Take Quiz</a>
                 </div>
+
+                <!-- Resources Card -->
+                <div class="topic-card" style="border-top-color: var(--accent);">
+                    <h2>Resources</h2>
+                    <p>Access textbooks, video lessons, and practice materials</p>
+                    <a href="#resources" onclick="showTopic('resources')">View Resources</a>
+                </div>
+
             </div>
         </div>
         
@@ -559,6 +585,29 @@
             </div>
         </div>
     </div>
+
+    <!-- Resources Content -->
+<div id="resources" class="topic-content">
+    <a href="#home" class="back-btn" onclick="showHome()">← Back to Topics</a>
+    <h2>Learning Resources</h2>
+    
+    <div class="subtopic">
+        <h3>Textbook Materials</h3>
+        <div class="example">
+            <h4>Grade 11 Mathematics Textbook</h4>
+            <p>Download the complete textbook covering all topics in the curriculum.</p>
+            <a href="textbooks/G11-Mathematics-STB-2023-web.pdf" target="_blank" class="btn" style="background-color: var(--accent);">Download Textbook</a>
+        </div>
+    </div>
+    
+    <div class="subtopic">
+        <h3>Video Lessons</h3>
+        <div class="example">
+            <h3>Video Lessons</h3>
+            <p>Watch explanations of mathematics concepts in this playlist by Professor Dave Explains on Youtube.</p>
+            <a href="https://www.youtube.com/watch?v=JbhBdOfMEPs&list=PLybg94GvOJ9FoGQeUMFZ4SWZsr30jlUYK&pp=0gcJCV8EOCosWNin" target = "_blank" class="btn">Watch Videos</a>
+        </div>
+    </div>
     
     <footer>
         <div class="container">
@@ -662,6 +711,15 @@
                 }
             };
         });
+
+        function showTopic(topicId) {
+            document.querySelectorAll('.topic-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('home').classList.remove('active');
+            document.getElementById(topicId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
     </script>
 </body>
 </html>
