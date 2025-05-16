@@ -71,6 +71,18 @@
         nav ul li a:hover {
             color: #2ecc71;
         }
+
+        .home-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .home-link:hover {
+            color: #2ecc71;
+        }
         
         /* Hero Section */
         .hero {
@@ -410,13 +422,73 @@
                 width: 100%;
             }
         }
+
+        /* Resources Section */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-right: 1.5rem;
+            color: #3498db;
+        }
+
+        .resource-content {
+            flex: 1;
+        }
+
+        .resource-content h3 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+        }
+
+        .resource-content p {
+            color: #666;
+            margin-bottom: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resource-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .resource-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <div class="logo">Bio<span>Learn</span></div>
+            <a href="login.html" class="home-link">← Back to FutureLearn</a>
             <nav>
                 <ul>
                     <li><a href="#" class="nav-link" data-target="home">Home</a></li>
@@ -426,6 +498,7 @@
                     <li><a href="#" class="nav-link" data-target="genetics">Genetics</a></li>
                     <li><a href="#" class="nav-link" data-target="human-body">Human Body</a></li>
                     <li><a href="#" class="nav-link" data-target="population">Population</a></li>
+                    <li><a href="#" class="nav-link" data-target="resources-section">Resources</a></li>
                 </ul>
             </nav>
         </div>
@@ -671,7 +744,7 @@
     <section class="page-section" id="enzyme">
         <div class="container">
             <h2>Enzymes</h2>
-            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Enzyme structure">
+            <img src="https://media.istockphoto.com/id/2198369384/vector/allosteric-inhibition-and-allosteric-activation.jpg?s=1024x1024&w=is&k=20&c=I1grBetbTMNNBm5-CSaF2_99rWHYFmUQ3felqIEOdnc=" alt="Enzyme structure">
             <p>Enzymes are biological catalysts that accelerate chemical reactions in living organisms. They are typically proteins that lower the activation energy of reactions, enabling metabolic processes to occur at rates sufficient for life.</p>
             
             <h3>Key Characteristics:</h3>
@@ -681,7 +754,6 @@
                 <li>Regulation - enzyme activity can be controlled</li>
             </ul>
             
-            <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Enzyme action">
             <p>Enzymes follow the lock-and-key model where the substrate fits into the enzyme's active site. Factors like temperature, pH, and substrate concentration affect enzyme activity. Enzymes are crucial in digestion, DNA replication, and many other biological processes.</p>
             
             <!-- Quiz Section -->
@@ -816,7 +888,7 @@
     <section class="page-section" id="human-body">
         <div class="container">
             <h2>Human Body Systems</h2>
-            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Human anatomy">
+            <img src="https://media.istockphoto.com/id/2166388157/photo/human-circulatory-system-heart-anatomy.jpg?s=1024x1024&w=is&k=20&c=UGvvrq5YafmGL85RwxlU4LrKMx6lrJYrqtqFJw-Gec8=" alt="Human anatomy">
             <p>The human body is composed of several interconnected systems that work together to maintain homeostasis and ensure survival. Each system has specialized organs and tissues that perform specific functions.</p>
             
             <h3>Major Systems:</h3>
@@ -829,7 +901,6 @@
                 <li>Endocrine system (hormone-producing glands)</li>
             </ul>
             
-            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Organ systems">
             <p>These systems work in coordination to perform essential functions like nutrient absorption, oxygen transport, waste removal, movement, and response to stimuli. Understanding these systems is crucial for medical science and maintaining health.</p>
             
             <!-- Quiz Section -->
@@ -960,10 +1031,40 @@
         </div>
     </section>
 
+    <!-- Resources Section -->
+    <section class="page-section" id="resources-section">
+        <div class="container">
+            <h2>Learning Resources</h2>
+            
+            <div class="resource-grid">
+                <!-- Textbook Resource -->
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <div class="resource-content">
+                        <h3>Textbook PDF</h3>
+                        <p>Download the complete Grade 11 Biology textbook approved by the Ethiopian Ministry of Education.</p>
+                        <a href="textbooks/G11-Biology-STB-2023-web.pdf" target="_blank" class="btn">Download Textbook</a>
+                    </div>
+                </div>
+                
+                <!-- Video Lessons -->
+                <div class="resource-card">
+                    <div class="resource-icon">🎬</div>
+                    <div class="resource-content">
+                        <h3>Video Lessons</h3>
+                        <p>Watch explanations of key biology concepts in this playlist by Crash Course on YouTube.</p>
+                        <a href="https://www.youtube.com/watch?v=PWGBqskV1UQ&list=PL8dPuuaLjXtPW_ofbxdHNciuLoTRLPMgB" target="_blank" class="btn">Watch Videos</a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="back-btn nav-link" data-target="home">Back to Home</a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>2023 BioLearn</p>
             <p>Educational resource for biology students</p>
         </div>
     </footer>
