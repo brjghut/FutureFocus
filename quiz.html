@@ -33,6 +33,22 @@
             padding-bottom: 8px;
             margin-top: 25px;
         }
+
+        .home-link {
+            color: #1a5276;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        .home-link:hover {
+            color: #448ec0;;
+        }
+
         .subject {
             background-color: var(--white);
             padding: 20px;
@@ -223,15 +239,13 @@
     
     <div class="quiz-header">
         <div class="quiz-title">
+            <a href="login.html" class="home-link">← Back to FutureLearn</a>
             <h1>Grade 11 Quiz Bot</h1>
             <div class="intro">
                 <p>Test your knowledge of Grade 11 subjects based on the Ethiopian curriculum.</p>
                 <div class="timer" id="timer">Time: 20:00</div>
             </div>
         </div>
-        <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
-             alt="Student studying" 
-             class="quiz-image">
     </div>
 
     <!-- Biology Section -->
@@ -247,7 +261,6 @@
                 <label><input type="radio" name="bio1" value="d"> Organ</label>
             </div>
             <div class="answer-feedback correct-feedback" id="bio1-feedback">Correct! The cell is the basic unit of life.</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Animal_cell_structure_en.svg" alt="Animal cell structure">
         </div>
         
         <div class="question">
@@ -271,10 +284,6 @@
             </div>
             <div class="answer-feedback correct-feedback" id="bio3-feedback">Correct! Mitochondria produce ATP, not the cell membrane.</div>
         </div>
-        
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/uixA8ZXx0KU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
     </div>
 
     <!-- Chemistry Section -->
@@ -290,7 +299,6 @@
                 <label><input type="radio" name="chem1" value="d"> Pb</label>
             </div>
             <div class="answer-feedback correct-feedback" id="chem1-feedback">Correct! Au comes from the Latin word for gold, "aurum".</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Periodic_table_large.svg" alt="Periodic table" style="max-width: 500px;">
         </div>
         
         <div class="question">
@@ -329,7 +337,6 @@
                 <label><input type="radio" name="math1" value="d"> 1.61</label>
             </div>
             <div class="answer-feedback correct-feedback" id="math1-feedback">Correct! π is approximately 3.14159...</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Pi-unrolled-720.gif" alt="Pi visualization">
         </div>
         
         <div class="question">
@@ -368,7 +375,6 @@
                 <label><input type="radio" name="phy1" value="d"> Pascal</label>
             </div>
             <div class="answer-feedback correct-feedback" id="phy1-feedback">Correct! The newton (N) is the SI unit of force.</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Sir_Isaac_Newton_%281643-1727%29.jpg" alt="Isaac Newton" style="max-width: 200px;">
         </div>
         
         <div class="question">
@@ -391,10 +397,6 @@
                 <label><input type="radio" name="phy3" value="d"> 5.5 m/s²</label>
             </div>
             <div class="answer-feedback correct-feedback" id="phy3-feedback">Correct! Standard gravity is approximately 9.8 m/s².</div>
-        </div>
-        
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/LEs9J2IQIZY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -422,7 +424,6 @@
                 <label><input type="radio" name="eng2" value="d"> She not like apples.</label>
             </div>
             <div class="answer-feedback correct-feedback" id="eng2-feedback">Correct! "Doesn't" is the correct auxiliary verb for third person singular.</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Shakespeare.jpg" alt="Shakespeare" style="max-width: 200px;">
         </div>
         
         <div class="question">
@@ -434,45 +435,6 @@
                 <label><input type="radio" name="eng3" value="d"> The big, brown dog.</label>
             </div>
             <div class="answer-feedback correct-feedback" id="eng3-feedback">Correct! A compound sentence joins two independent clauses with a conjunction.</div>
-        </div>
-    </div>
-
-    <!-- History Section (New) -->
-    <div class="subject">
-        <h2>History</h2>
-        
-        <div class="question">
-            <p>1. When did Ethiopia defeat the Italian colonial army at the Battle of Adwa?</p>
-            <div class="options">
-                <label><input type="radio" name="his1" value="a"> 1886</label>
-                <label><input type="radio" name="his1" value="b"> 1896</label>
-                <label><input type="radio" name="his1" value="c"> 1914</label>
-                <label><input type="radio" name="his1" value="d"> 1935</label>
-            </div>
-            <div class="answer-feedback correct-feedback" id="his1-feedback">Correct! The Battle of Adwa was fought on March 1, 1896.</div>
-        </div>
-        
-        <div class="question">
-            <p>2. Which ancient Ethiopian kingdom was known for its obelisks?</p>
-            <div class="options">
-                <label><input type="radio" name="his2" value="a"> Zagwe</label>
-                <label><input type="radio" name="his2" value="b"> D'mt</label>
-                <label><input type="radio" name="his2" value="c"> Aksum</label>
-                <label><input type="radio" name="his2" value="d"> Shewa</label>
-            </div>
-            <div class="answer-feedback correct-feedback" id="his2-feedback">Correct! The Aksumite kingdom erected massive stone obelisks.</div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Axum_obelisk.jpg" alt="Aksum Obelisk" style="max-width: 300px;">
-        </div>
-        
-        <div class="question">
-            <p>3. Who was the first president of Ethiopia?</p>
-            <div class="options">
-                <label><input type="radio" name="his3" value="a"> Haile Selassie I</label>
-                <label><input type="radio" name="his3" value="b"> Mengistu Haile Mariam</label>
-                <label><input type="radio" name="his3" value="c"> Dr. Negasso Gidada</label>
-                <label><input type="radio" name="his3" value="d"> Meles Zenawi</label>
-            </div>
-            <div class="answer-feedback correct-feedback" id="his3-feedback">Correct! Dr. Negasso Gidada served from 1995-2001.</div>
         </div>
     </div>
 
