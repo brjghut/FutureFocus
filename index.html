@@ -426,6 +426,38 @@
       color: rgba(255, 255, 255, 0.7);
       font-size: 0.9rem;
     }
+    .footer-contact {
+      margin-top: 1rem;
+    }
+
+    .footer-contact h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .footer-contact div { /* Style the new <div> */
+      line-height: 1.0; /* Tighter line spacing */
+    }
+
+    .footer-contact a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5em; /* Add spacing between links */
+    }
+
+    .footer-contact a:hover {
+      color: var(--white);
+    }
+
+    .footer-contact a span.material-icons {
+      font-size: 1.2em;
+      margin-right: 0.7em;
+      vertical-align: middle;
+    }
 
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -680,7 +712,7 @@
         </div>
         <p class="footer-about">A comprehensive learning platform for high school students, providing quality educational resources and interactive content across all major subjects.</p>
       </div>
-      
+
       <div class="footer-links">
         <h3>Subjects</h3>
         <ul>
@@ -691,15 +723,28 @@
           <li><a href="physics.html">Physics</a></li>
         </ul>
       </div>
-      
+
       <div class="footer-links">
         <h3>Resources</h3>
         <ul>
           <li><a href="quiz.html">Quiz Bot</a></li>
         </ul>
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <div>  <a href="mailto:futurefocus527@gmail.com" title="Email">
+              <span class="material-icons">email</span> futurefocus527@gmail.com
+            </a><br>
+            <a href="https://t.me/futurefocus527" target="_blank" title="Telegram">
+              <span class="material-icons">send</span> t.me/futurefocus527
+            </a><br>
+            <a href="https://instagram.com/futurefocus527" target="_blank" title="Instagram">
+              <span class="material-icons">camera_alt</span> futurefocus527
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-    
+
     <div class="footer-bottom">
       <p>2025 FutureFocus | STEM Learning Platform</p>
     </div>
